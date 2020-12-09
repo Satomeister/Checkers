@@ -1,5 +1,156 @@
-.app {
-    width: 20px;
-    height: 200px;
-    background-color: black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: rgba(lightblue, .3);
+}
+
+.start-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .start {
+        padding: 50px;
+        font-size: 30px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+}
+
+.board-container {
+    position: relative;
+    display: none;
+    justify-content: center;
+}
+
+.info {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+
+    .currentTeam {
+        margin-top: 20px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .checkersQuantity {
+        .color-container {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            span {
+                padding-left: 10px;
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+        .white {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 7px solid #fff;
+            background: #d7d7d7;
+        }
+        .black {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 7px solid #222;
+            background: #52555e;
+        }
+    }
+}
+
+.newGame {
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.board {
+    width: 600px;
+    height: 600px;
+    border: 5px solid brown;
+    transition: .5s;
+    &.rotate180 {
+        transform: rotateX(180deg);
+    }
+}
+
+.row {
+    width: 100%;
+    height: 12.5%;
+    display: flex;
+}
+
+.cell {
+    width: 12.5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell[data-color='black'] {
+   background: saddlebrown;
+}
+
+.cell[data-color='white'] {
+    background: sandybrown;
+}
+
+.cell.candidate {
+    background: #368BC1;
+}
+
+.checker {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    &[data-team='2']{
+        border: 7px solid #222;
+        background: #52555e;
+    }
+    &[data-team='1']{
+        border: 7px solid #fff;
+        background: #d7d7d7;
+    }
+    &.king {
+        background: brown;
+    }
+}
+
+.popup-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(#222222, .9);
+    z-index: 10;
+    .popup {
+        transform: translateY(-25%);
+        width: 500px;
+        height: 230px;
+        background: #ffffff;
+        span {
+            display: block;
+            font-size: 30px;
+            font-weight: 500;
+            padding: 20px;
+        }
+        .newGame {
+            display: block;
+            margin: 20px;
+        }
+    }
 }

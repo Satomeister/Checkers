@@ -5,9 +5,45 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Checkers</title>
 </head>
 <body>
-    <div class="app"></div>
+    <div class="start-container">
+        <button class="start" data-action="start">
+            Start Game
+        </button>
+    </div>
+
+    <div class="board-container">
+        <div class="info" id="info">
+            <button class="newGame" data-action="start">
+                New game
+            </button>
+            <div class="currentTeam" id="team">
+                White is moving
+            </div>
+            <div class="checkersQuantity">
+                <div class="color-container">
+                    <div class="white"></div>
+                    <span id="white">12</span>
+                </div>
+                <div class="color-container">
+                    <div class="black"></div>
+                    <span id="black">12</span>
+                </div>
+            </div>
+        </div>
+        <div class="board" id="board"></div>
+    </div>
+
+    <div class="popup-container">
+        <div class="popup">
+            <span id="loser"></span>
+            <button class="newGame" data-action="start">
+                New game
+            </button>
+        </div>
+    </div>
+
 </body>
 </html>
